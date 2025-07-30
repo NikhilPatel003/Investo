@@ -1,7 +1,9 @@
+import Home from "./Landing_page/Home/Home"
+
 function App() {
   return (
     <>
-      <h1>Hello World !</h1>
+      <Home/>
     </>
   );
 }
