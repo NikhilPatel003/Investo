@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "@mui/material/Button";
 
 const Hero = () => {
@@ -12,7 +11,6 @@ const Hero = () => {
           loading="lazy"
         />
       </div>
-
       <h1 className="mt-5">Invest in everything</h1>
       <p className="fs-5">
         Online platform to invest in stocks, derivatives, mutual funds, ETFs,
