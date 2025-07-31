@@ -5,7 +5,7 @@ import Pricing from "./Pricing";
 import Education from "./Education";
 import OpenAccount from "../OpenAccount";
 import Navbar from "../Navbar";
-import Footer from "../footer";
+import Footer from "../../footer/Footer";
 
 function Home() {
   return (
@@ -17,7 +17,7 @@ function Home() {
       <Pricing />
       <Education />
       <OpenAccount />
-      <Footer />
+      <Footer/>
     </>
   );
 }

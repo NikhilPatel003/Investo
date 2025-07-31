@@ -1,9 +1,9 @@
-import Home from "./Landing_page/Home/Home"
+import Home from "./Landing_page/Home/Home";
 
 function App() {
   return (
     <>
-      <Home/>
+      <Home />
     </>
   );
 }
