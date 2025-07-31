@@ -5,6 +5,7 @@ function About() {
   return (
     <>
       <Hero />
+      <div className=" my-5">.</div>
       <Team />
     </>
   );

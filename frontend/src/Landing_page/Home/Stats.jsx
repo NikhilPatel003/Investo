@@ -2,63 +2,64 @@ import React from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 function Stats() {
+  const statsData = [
+    {
+      title: "Customer-first always",
+      description:
+        "That's why 1.6+ crore customers trust Zerodha with ~ ₹6 lakh crores of equity investments, making us India’s largest broker; contributing to 15% of daily retail exchange volumes in India.",
+    },
+    {
+      title: "No spam or gimmicks",
+      description:
+        'No gimmicks, spam, "gamification", or annoying push notifications. High quality apps that you use at your pace, the way you like. Our philosophies.',
+    },
+    {
+      title: "The Zerodha universe",
+      description:
+        "Not just an app, but a whole ecosystem. Our investments in 30+ fintech startups offer you tailored services specific to your needs.",
+    },
+    {
+      title: "Do better with money",
+      description:
+        "With initiatives like Nudge and Kill Switch, we don't just facilitate transactions, but actively help you do better with your money.",
+    },
+  ];
+
   return (
-    <div className="container p-5">
-      <div className="row">
-        <div className="col-5">
+    <section className="container py-5">
+      <div className="row align-items-center">
+        {/* Left Column */}
+        <div className="col-12 col-md-5 mb-5 mb-md-0">
           <h2 className="mb-5">Trust with confidence</h2>
-          <div className="col-11 mb-4">
-            <h3>Customer-first always</h3>
-            <p className="text-muted">
-              That's why 1.6+ crore customers trust Zerodha with ~ ₹6 lakh
-              crores of equity investments, making us India’s largest broker;
-              contributing to 15% of daily retail exchange volumes in India.
-            </p>
-          </div>
-          <div className="col-11 mb-4">
-            <h3>No spam or gimmicks</h3>
-            <p className="text-muted">
-              No gimmicks, spam, "gamification", or annoying push notifications.
-              High quality apps that you use at your pace, the way you like. Our
-              philosophies.
-            </p>
-          </div>
-          <div className="col-11 mb-4">
-            <h3>The Zerodha universe</h3>
-            <p className="text-muted">
-              Not just an app, but a whole ecosystem. Our investments in 30+
-              fintech startups offer you tailored services specific to your
-              needs.
-            </p>
-          </div>
-          <div className="col-11 mb-4">
-            <h3>Do better with money</h3>
-            <p className="text-muted">
-              With initiatives like Nudge and Kill Switch, we don't just
-              facilitate transactions, but actively help you do better with your
-              money.
-            </p>
-          </div>
+
+          {statsData.map((item, index) => (
+            <div key={index} className="mb-4">
+              <h4>{item.title}</h4>
+              <p className="text-muted">{item.description}</p>
+            </div>
+          ))}
         </div>
-        <div className="col-7 text-center">
-          <div className="m-auto text-center">
-            <img
-              src="/media/Images/ecosystem.png"
-              alt="ecosytem"
-              style={{ width: "80%" }}
-            />
-          </div>
-          <p>
-            <a href="" className="text-decoration-none mx-5">
+
+        {/* Right Column */}
+        <div className="col-12 col-md-7 text-center">
+          <img
+            src="/media/Images/ecosystem.png"
+            alt="Zerodha ecosystem illustration"
+            className="img-fluid mb-4"
+            style={{ maxWidth: "80%" }}
+          />
+
+          <div className="d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#" className="text-decoration-none d-flex align-items-center gap-2">
               Explore our products <ArrowForwardIcon />
             </a>
-            <a href="" className="text-decoration-none">
+            <a href="#" className="text-decoration-none d-flex align-items-center gap-2">
               Try Kite demo <ArrowForwardIcon />
             </a>
-          </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
