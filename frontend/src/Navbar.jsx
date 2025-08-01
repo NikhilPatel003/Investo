@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg border-bottom">
+    <nav className="navbar navbar-expand-lg border-bottom" style={{height:"70px"}}>
       <div className="container">
         <Link className="navbar-brand col-5" to="/">
           <img
