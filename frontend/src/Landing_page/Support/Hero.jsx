@@ -4,7 +4,7 @@ import { div } from "motion/react-client";
 function Hero() {
   return (
     <div style={{ backgroundColor: "#f0f4f7ff" }}>
-      <div className="container py-4">
+      <div className="container py-5">
         {/* Header Section */}
         <header className="d-flex justify-content-between align-items-center pb-3 mb-4">
           <h4 className="mb-0 fs-1 fw-semibold">Support Portal</h4>
