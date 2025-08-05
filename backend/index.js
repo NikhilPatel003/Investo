@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const {HoldingsModel} = require("./models/HoldingsModel");
 const {PositionsModel} = require("./models/PositionsModel");
+const {OrdersModel} = require("./models/OrdersModel");
 const app = express();
 const PORT = process.env.PORT || 3002;
 const MONGO_URL = process.env.MONGO_URL;
@@ -34,6 +35,19 @@ app.get("/allHoldings", async (req,res) => {
 app.get("/allPositions", async (req,res) => {
   let allPositions = await PositionsModel.find({});
   res.json(allPositions);
+})
+
+app.get("/allOrders", async (req,res) => {
+  let allOrders = await OrdersModel.find({});
+  res.json(allOrders);
+})
+
+app.post("/newOrder" , async (req,res) => {
+  let newOrder = new OrdersModel(req.body);
+
+  newOrder.save();
+
+  res.send("Order Saved !")
 })
 
 app.listen(PORT, () => {

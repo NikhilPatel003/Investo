@@ -1,6 +1,7 @@
 import { Tooltip, Grow } from "@mui/material";
 import { watchlist } from "../data/data";
-import { useState } from "react";
+import GeneralContext from "./GeneralContext";
+import { useState, useContext } from "react";
 import {
   KeyboardArrowDown as ArrowDownIcon,
   KeyboardArrowUp as ArrowUpIcon,
@@ -63,6 +64,15 @@ const WatchListItem = ({ stock }) => {
 };
 
 const WatchListActions = ({ uid }) => {
+  const generalContext = useContext(GeneralContext);
+
+  const handleBuyClick = () => {
+    generalContext.openBuyWindow(uid,"BUY");
+  };
+  const handleSellClick = () => {
+    generalContext.openBuyWindow(uid,"SELL");
+  }
+
   return (
     <span className="actions">
       <span>
@@ -71,6 +81,7 @@ const WatchListActions = ({ uid }) => {
           placement="top"
           arrow
           TransitionComponent={Grow}
+          onClick={handleBuyClick}
         >
           <button className="buy">Buy</button>
         </Tooltip>
@@ -79,6 +90,7 @@ const WatchListActions = ({ uid }) => {
           placement="top"
           arrow
           TransitionComponent={Grow}
+          onClick={handleSellClick}
         >
           <button className="sell">Sell</button>
         </Tooltip>

@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react";
-// import { holdings } from "../data/data";
 import axios from "axios";
 
 const Holdings = () => {
