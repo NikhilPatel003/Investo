@@ -4,16 +4,17 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { TextField, Button, Paper, Typography, Box } from "@mui/material";
 import 'react-toastify/dist/ReactToastify.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Signup = () => {
+const Login = () => {
   const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
-    username: "",
   });
 
-  const { email, password, username } = inputValue;
+  const { email, password } = inputValue;
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -30,14 +31,14 @@ const Signup = () => {
 
   const handleSuccess = (msg) =>
     toast.success(msg, {
-      position: "bottom-right",
+      position: "bottom-left",
     });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/auth/signup",
+        "http://localhost:4000/auth/login",
         { ...inputValue },
         { withCredentials: true }
       );
@@ -45,7 +46,7 @@ const Signup = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "http://localhost:5174"; 
+          window.location.href = "http://localhost:5174";
         }, 1000);
       } else {
         handleError(message);
@@ -57,7 +58,6 @@ const Signup = () => {
     setInputValue({
       email: "",
       password: "",
-      username: "",
     });
   };
 
@@ -65,7 +65,7 @@ const Signup = () => {
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <Paper elevation={3} className="p-4" style={{ maxWidth: 400, width: "100%" }}>
         <Typography variant="h5" gutterBottom className="text-center">
-          Create an Account
+          Login to Your Account
         </Typography>
         <form onSubmit={handleSubmit}>
           <Box mb={2}>
@@ -74,17 +74,6 @@ const Signup = () => {
               type="email"
               name="email"
               value={email}
-              fullWidth
-              required
-              onChange={handleOnChange}
-            />
-          </Box>
-          <Box mb={2}>
-            <TextField
-              label="Username"
-              type="text"
-              name="username"
-              value={username}
               fullWidth
               required
               onChange={handleOnChange}
@@ -102,11 +91,11 @@ const Signup = () => {
             />
           </Box>
           <Button type="submit" variant="contained" color="primary" fullWidth>
-            Sign Up
+            Login
           </Button>
         </form>
         <Typography variant="body2" align="center" className="mt-3">
-          Already have an account? <Link to="/login">Login</Link>
+          Don’t have an account? <Link to="/signup">Signup</Link>
         </Typography>
         <ToastContainer />
       </Paper>
@@ -114,4 +103,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
