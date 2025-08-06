@@ -2,8 +2,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Landing_page/Home/Home.jsx";
 import About from "./Landing_page/About/About.jsx";
-import Signup from "./Landing_page/Signup/Signup.jsx";
-import Login from "./Landing_page/Signup/Login.jsx";
+import {Signup,Login} from "./Landing_page/Signup/Index.jsx"
 import PricingPage from "./Landing_page/Pricing/PricingPage.jsx";
 import SupportPage from "./Landing_page/Support/SupportPage.jsx";
 import ProductsPage from "./Landing_page/Products/ProductsPage.jsx";
