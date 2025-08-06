@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 
 function OpenAccount() {
   return (
-    <section className="open-account-section container mb-5 text-center">
+    <section className="open-account-section container text-center" style={{marginBottom:"100px"}}>
       <div className="row">
         <div className="col-12">
           <h1 className="mt-5">Open a Zerodha account</h1>
