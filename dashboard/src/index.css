@@ -278,10 +278,11 @@ code {
   display: inline-block;
   margin-right: 30px;
   text-decoration: none;
+  margin-top: 1.5rem;
 }
 
 .menu {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: rgb(70, 70, 70);
 }

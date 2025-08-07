@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Avatar from '@mui/material/Avatar';
+import { deepOrange, deepPurple } from '@mui/material/colors';
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
@@ -23,7 +25,7 @@ const Menu = () => {
               style={{ textDecoration: "none" }}
               onClick={() => handleMenuClick(0)}
             >
-              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>Dashboard</p>
+              <p className={`${selectedMenu === 0 ? activeMenuClass : menuClass }`}>Dashboard</p>
             </Link>
           </li>
           <li>
@@ -74,7 +76,7 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile" onClick={handleMenuClick}>
-          <div className="avatar">ZU</div>
+          <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
           <p className="username">USERID</p>
         </div>
       </div>
